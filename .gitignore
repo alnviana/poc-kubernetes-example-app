@@ -1,0 +1,9 @@
+# Common
+.git
+
+# IDE Configs
+.vscode
+
+# env files
+*.env
+*.env.*
