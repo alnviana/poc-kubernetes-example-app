@@ -1,0 +1,12 @@
+# Common
+.git
+
+# IDE Configs
+.vscode
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Other stuff
+README.md
