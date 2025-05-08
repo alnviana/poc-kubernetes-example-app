@@ -38,7 +38,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.IMAGE_NAME }}
+          images: ${{ vars.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.REPOSITORY_NAME }}/${{ vars.IMAGE_NAME }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha,format=long,prefix=
