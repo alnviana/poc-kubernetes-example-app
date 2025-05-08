@@ -3,6 +3,8 @@
 
 # IDE Configs
 .vscode
+.yamllint.yaml
+.yamllint.yml
 
 # env files
 *.env
