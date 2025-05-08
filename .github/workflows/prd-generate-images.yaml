@@ -34,6 +34,9 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ vars.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev
+
       - name: Docker metadata
         id: meta
         uses: docker/metadata-action@v5
