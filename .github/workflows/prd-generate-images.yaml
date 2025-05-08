@@ -13,6 +13,8 @@ on:
 
 jobs:
   build-and-push:
+    if: ${{ github.head_ref == 'main' || github.ref_name == 'main' }}
+
     name: Build and Push to Artifact Registry
     runs-on: ubuntu-latest
 
