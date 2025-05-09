@@ -21,7 +21,7 @@ jobs:
     if: ${{ github.event.workflow_run == null || (github.event.workflow_run != null && github.event.workflow_run.conclusion == 'success') }}
 
     permissions:
-      contents: 'read'
+      contents: 'write'
 
     environment: prd
 
@@ -68,3 +68,4 @@ jobs:
             git push
             echo "### Result :clipboard:" >> $GITHUB_STEP_SUMMARY
             echo "Changes committed to the k8s manifest repository." >> $GITHUB_STEP_SUMMARY
+          fi
