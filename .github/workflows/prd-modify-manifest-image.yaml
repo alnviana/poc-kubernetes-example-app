@@ -55,7 +55,7 @@ jobs:
         run: |
           IMAGE="${{ vars.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.REPOSITORY_NAME }}/${{ vars.IMAGE_NAME_DEFAULT }}"
           IMAGE_TAG="${{ steps.image-tag.outputs.image-tag }}"
-          yq e '(.spec.template.spec.containers[] | select(.name == "${{ vars.APPLICATION_NAME }}")).image = "$IMAGE:$IMAGE_TAG"' -i ${{ vars.APPLICATION_NAME }}/deployment.yaml
+          yq e "(.spec.template.spec.containers[] | select(.name == \"${{ vars.APPLICATION_NAME }}\")).image = \"$IMAGE:$IMAGE_TAG\"" -i ${{ vars.APPLICATION_NAME }}/deployment.yaml
           git add ${{ vars.APPLICATION_NAME }}/deployment.yaml
 
       - name: Check the changes and commit
