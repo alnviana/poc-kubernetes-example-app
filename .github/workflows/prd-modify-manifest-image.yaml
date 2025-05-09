@@ -60,7 +60,7 @@ jobs:
 
       - name: Check the changes and commit
         run: |
-          if git diff --staged --quiet; then
+          if git diff --staged; then
             echo "### Result :clipboard:" >> $GITHUB_STEP_SUMMARY
             echo "There are no changes to commit." >> $GITHUB_STEP_SUMMARY
           else
